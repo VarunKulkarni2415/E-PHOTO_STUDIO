@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage1.master.cs" Inherits="MasterPage1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="Admin.css"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+         <div id="ribbon">WELCOME</div>  
+    
+    <div id="container">
+
+      <nav>
+        <div id="logo">
+          Digital Adventures
+        </div>
+        <ul>SSS
+          <li><a href="SignupData.aspx">User Data</a></li>
+           <li><a href="orderdata.aspx">Event Data</a></li>
+             <li><a href="Uploadimages.aspx">Upload Photo</a></li>
+               <li><a href="PortfolioImg.aspx">Portfolio Images</a></li>
+          <li><a href="Login2.aspx">Logout</a></li>
+<%--          <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);">--%>
+        <%--      <a href="#">Gallery &nbsp;<i class="fa fa-caret-down"></i></a>
+            <div class="dd">
+              <div id="up_arrow"></div>
+            <ul>
+              
+              <li><a href="#">2019</a></li>
+              <li><a href="#">2018</a></li>
+              <li><a href="#">2017</a></li>
+            </ul>
+            </div>
+          </li>
+          <li><a href="#">Contact</a></li>
+          <li class="dropdown"><a href="#">Others &nbsp;<i class="fa fa-caret-down"></i> </a>
+           <div class="dd">
+             <div id="u_a_c"><div id="up_arrow"></div></div>
+            <ul>--%>
+              
+             <%-- <li><a href="#">DOCS</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">PROJECTS</a></li>--%>
+            </ul>
+            </div>
+        </ul>
+      </nav>
+    </div>
+            <center>
+           
+                <br />
+           </center>
+            </div>
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+   
+            </form>
+    
+        </body>
+</html>

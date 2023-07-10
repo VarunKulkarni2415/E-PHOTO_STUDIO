@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class orderdata : System.Web.UI.Page
+{
+    string strcmd;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+       
+    }
+
+    protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        string strDetail = "";
+        int index = 0;
+        if (e.CommandName == "Del")
+        {
+            index = Convert.ToInt32(e.CommandArgument);
+            strDetail = GridView1.Rows[index].Cells[0].Text;
+            strcmd = "Delete from orderdetails where orderid=" + strDetail;
+            SQLHelper.ExecuteNonQuery(strcmd);
+            Response.Redirect("~/orderdata.aspx");
+
+        }
+        else if (e.CommandName == "upd")
+        {
+            index = Convert.ToInt32(e.CommandArgument);
+            strDetail = GridView1.Rows[index].Cells[0].Text;
+            strcmd = "update orderdetails set status='completed' where orderid=" + strDetail;
+            SQLHelper.ExecuteNonQuery(strcmd);
+            Response.Redirect("~/orderdata.aspx");
+        }
+    }
+}
